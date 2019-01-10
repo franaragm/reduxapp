@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {AppState} from '../../app.reducers';
-import {MultiplicarAction, ResetAction} from '../contador.actions';
+import * as fromContador from '../contador.actions';
 
 @Component({
   selector: 'app-nieto',
@@ -21,7 +21,7 @@ export class NietoComponent implements OnInit {
   }
 
   reset() {
-    const accion = new ResetAction();
+    const accion = new fromContador.ResetAction();
     this.store.dispatch(accion);
   }
 
